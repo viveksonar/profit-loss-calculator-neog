@@ -1,42 +1,41 @@
-// Step 1 - selecting all the elements
-var initialPrice = document.querySelector("#initial-price");
-var stocksQuantity = document.querySelector("#stocks-quantity");
-var currentPrice = document.querySelector("#current-price");
-var submitBtn = document.querySelector("#submit-btn");
-var outputBox = document.querySelector("#output-box");
+var initialPrice=document.getElementById("initial-price");
+var qty=document.getElementById("quantity");
+var currentPrice=document.getElementById("current-price");
 
-// Ex-06
-submitBtn.addEventListener("click", submitHandler);
+var submitBtn=document.getElementById("submit");
+var output=document.querySelector(".output");
 
-function submitHandler() {
-  var ip = Number(initialPrice.value);
-  var qty = Number(stocksQuantity.value);
-  var curr = Number(currentPrice.value);
+submitBtn.addEventListener("click",clickHandler);
 
-  calculateProfitAndLoss(ip, qty, curr);
-}
+function clickHandler(){
+    var price=Number(initialPrice.value);
+    var quantity=Number(qty.value);
+    var current=Number(currentPrice.value);
 
-// Ex-05
-function calculateProfitAndLoss(initial, quantity, current) {
-  if (initial > current) {
-    var loss = (initial - current) * quantity;
-    var lossPercentage = (loss / (initial*quantity)) * 100;
+    if(current>price){
+        var profit=(((current*quantity)-(price*quantity))*100)/(price*quantity);
+        var p=(current*quantity)-(price*quantity);
+        var message="Yay! You made a profit of "+p+" i.e. "+profit+"%";
+        output.style.display="block";
+        output.style.color="green";
+        output.style.background="rgba(132, 190, 230, 0.6)";
+        output.innerText=message;
+    }
+    else if(current<price){
+        var loss=(((price*quantity)-(current*quantity))*100)/(price*quantity);
+        var l=(price*quantity)-(current*quantity);
+        var message="Oops! You had a loss of "+l+ " i.e. "+loss+"%";
+        output.style.display="block";
+        output.style.color="red";
+        output.style.background="rgba(132, 190, 230, 0.6)";
+        output.innerText=message;
 
-    showOutput(
-      `Hey, the loss is ${loss} and the percent is ${lossPercentage}%`
-    );
-  } else if (current > initial) {
-    var profit = (current - initial) * quantity;
-    var profitPercentage = (profit / (initial*quantity)) * 100;
+    }
+    else{
+        output.style.display="block";
+        output.style.color="white";
+        output.style.background="rgba(132, 190, 230, 0.6)";
+        output.innerText="No Loss! No Profit! "
 
-    showOutput(
-      `Hey, the profit is ${profit} and the percent is ${profitPercentage}%`
-    );
-  } else {
-    showOutput(`No pain no gain and no gain no pain`);
-  }
-}
-
-function showOutput(message) {
-  outputBox.innerHTML = message;
+    }
 }

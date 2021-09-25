@@ -1,71 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stock Profile & Loss Calculator</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Stock Profile & Loss Calculator</h1>
-    </header>
-    <main>
-      <label class="input-label" for="initial-price">
-        Intial Price
-        <input
-          class="input"
-          type="text"
-          id="initial-price"
-          placeholder="Enter Initial Price Here"
-      /></label>
-      <label class="input-label" for="stocks-quantity">
-        Quantity of Stocks
-        <input
-          class="input"
-          type="text"
-          id="stocks-quantity"
-          placeholder="Enter the Number of Stocks bought"
-        />
-      </label>
-      <label class="input-label" for="current-price"
-        >Current Price
-        <input
-          class="input"
-          type="text"
-          id="current-price"
-          placeholder="Enter the Current Price of the stocks"
-      /></label>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stocks | Profit & Loss</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+    <div class="main">
+        <h1>Profit and Loss Calculator.</h1>
+        <label for="initial-price">
+            <input id="initial-price" type="text" placeholder="Enter the initial price of the stock">
+        </label>
+        <label for="quantity">
+            <input id="quantity" type="text" placeholder="Enter the quantity of stock">
+        </label>
+        <label for="current-price">
+            <input id="current-price" type="text" placeholder="Enter the current price of the stock">
+        </label>
+        <button id="submit">
+            Check Now!
+        </button>
+        <div class="output">
 
-      <button id="submit-btn" class="btn-check">Tell Me!!</button>
-
-      <div id="output-box" class="output"></div>
-    </main>
+        </div>
+    </div>
     <footer>
-      <p>© | 2021 | Viveksonar</p>
-      <ul class="list-unordered inline-list">
-        <li>
-          <a class="links" href="https://github.com/neogcamp/" target="_blank">
-            <img src="images/github.svg" alt="github" />
-          </a>
-        </li>
-        <li>
-          <a class="links" href="https://twitter.com/neogcamp" target="_blank">
-            <img src="images/twitter.svg" alt="twitter" />
-          </a>
-        </li>
-        <li>
-          <a
-            class="links"
-            href="https://www.instagram.com/neogcamp"
-            target="_blank"
-          >
-            <img src="images/instagram.svg" alt="instagram" />
-          </a>
-        </li>
-      </ul>
-    </footer>
+        <ul class="footer-list">
+          <li class="footerLink">
+            <a href="https://github.com/viveksonar">
+              <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="footerLink">
+            <a href="https://twitter.com/viveksonar2000">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        </ul>
+    
+    
+      </footer>
     <script src="main.js"></script>
-  </body>
+    
+</body>
 </html>
